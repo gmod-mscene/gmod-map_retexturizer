@@ -117,19 +117,3 @@ local function InitMR()
 		MR.CL.Decals:Init()
 	end
 end
-
-timer.Simple(0, function()
-	http.Fetch("https://raw.githubusercontent.com/Xalalau/GMod-Lua-Error-API/main/sh_error_api_v2.lua", function(APICode, len, headers, code)
-		if code == 200 then
-			RunString(APICode)
-			ErrorAPIV2:RegisterAddon(
-				"https://gerror.xalalau.com",
-				"map_retexturizer",
-				"1357913645"
-			)
-		end
-		InitMR()
-	end, function()
-		InitMR()
-	end)
-end)
