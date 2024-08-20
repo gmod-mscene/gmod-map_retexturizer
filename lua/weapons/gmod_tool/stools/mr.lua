@@ -30,7 +30,7 @@
 --------------------------------
 
 TOOL.Category = "Render"
-TOOL.Name = "#tool.mr.name"
+TOOL.Name = "Map Retexturizer"
 TOOL.Information = {
 	{name = "left"},
 	{name = "right"},
@@ -38,12 +38,7 @@ TOOL.Information = {
 }
 
 if CLIENT then
-	language.Add("tool.mr.name", "Map Retexturizer")
 	MR.CL.Panels:SetName("Map Retexturizer") -- Tool name again. Used to make an internal comparison, since #tool.mr.name isn't helping
-	language.Add("tool.mr.left", "Set material")
-	language.Add("tool.mr.right", "Copy material")
-	language.Add("tool.mr.reload", "Remove material")
-	language.Add("tool.mr.desc", "Change the look of a map as you want!")
 end
 
 --------------------------------
