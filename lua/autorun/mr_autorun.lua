@@ -117,3 +117,4 @@ local function InitMR()
 		MR.CL.Decals:Init()
 	end
 end
+InitMR()

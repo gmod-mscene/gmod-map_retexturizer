@@ -172,7 +172,7 @@ function MPanel:Create()
 			sheet:Dock(FILL)
  
 			local panel1 = vgui.Create("DPanel", sheet)
-				sheet:AddSheet("Materials", panel1, "icon16/pencil.png")
+				sheet:AddSheet("gui.mr.mp.name", panel1, "icon16/pencil.png")
 
 				local _, contextPreview = MR.CL.Panels:SetPreview(panel1, "DPanel", previewFrameInfo)
 

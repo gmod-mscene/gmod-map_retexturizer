@@ -30,7 +30,7 @@ end
 function Panels:SetPreview(parent, frameType, info)
 	local material = Material(MR.Materials:IsFullSkybox(MR.Materials:GetSelected()) and MR.Skybox:SetSuffix(MR.Materials:GetSelected()) or MR.Materials:GetSelected())
 
-	local frame = MR.CL.Panels:StartContainer("Preview", parent, frameType, info)
+	local frame = MR.CL.Panels:StartContainer("gui.mr.mb.preview", parent, frameType, info)
 
 	local width = frame:GetWide()
 

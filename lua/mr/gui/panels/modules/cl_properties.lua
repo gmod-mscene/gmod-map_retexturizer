@@ -31,7 +31,7 @@ local function validateEntry(panel)
 end
 
 function Panels:SetPropertiesPath(parent, frameType, info)
-	local frame = MR.CL.Panels:StartContainer("Path", parent, frameType, info)
+	local frame = MR.CL.Panels:StartContainer("gui.mr.props.path", parent, frameType, info)
 
 	local width = frame:GetWide()
 
@@ -61,7 +61,7 @@ function Panels:SetPropertiesPath(parent, frameType, info)
 		materialText2:SetSize(materialInfo2.width, materialInfo2.height)
 		materialText2:SetPos(materialInfo2.x, materialInfo2.y)
 		materialText2:SetConVar("internal_mr_old_material")
-		materialText2:SetTooltip("Base material")
+		materialText2:SetTooltip("gui.mr.props.base")
 		local backupMat2Paint = materialText2.Paint
 		function materialText2:Paint(w, h)
 			backupMat2Paint(self, w, h)
@@ -79,14 +79,14 @@ function Panels:SetPropertiesPath(parent, frameType, info)
 		materialText:SetSize(materialInfo.width, materialInfo.height)
 		materialText:SetPos(materialInfo.x, materialInfo.y)
 		materialText:SetConVar("internal_mr_new_material")
-		materialText:SetTooltip("New material")
+		materialText:SetTooltip("gui.mr.props.new")
 
 	return MR.CL.Panels:FinishContainer(frame, panel, frameType)
 end
 
 -- Section: change properties
 function Panels:SetProperties(parent, frameType, info)
-	local frame = MR.CL.Panels:StartContainer("Properties", parent, frameType, info)
+	local frame = MR.CL.Panels:StartContainer("gui.mr.props.name", parent, frameType, info)
 
 	local width = frame:GetWide()
 
@@ -155,7 +155,7 @@ function Panels:SetProperties(parent, frameType, info)
 				end)
 			end
 
-			local witdhMagnification = propertiesPanel:CreateRow("Magnification", "Width")
+			local witdhMagnification = propertiesPanel:CreateRow("gui.mr.props.magnification", "gui.mr.props.width")
 				witdhMagnification:Setup("Float", { min = 0.01, max = 6 })
 				witdhMagnification:SetValue(GetConVar("internal_mr_scalex"):GetFloat())
 				witdhMagnification.DataChanged = function(self, data)
@@ -166,7 +166,7 @@ function Panels:SetProperties(parent, frameType, info)
 					setValueFromText("internal_mr_scalex", self:GetValue())
 				end
 
-			local heightMagnification = propertiesPanel:CreateRow("Magnification", "Height")
+			local heightMagnification = propertiesPanel:CreateRow("gui.mr.props.magnification", "gui.mr.props.height")
 				heightMagnification:Setup("Float", { min = 0.01, max = 6 })
 				heightMagnification:SetValue(GetConVar("internal_mr_scaley"):GetFloat())
 				heightMagnification.DataChanged = function(self, data)
@@ -177,7 +177,7 @@ function Panels:SetProperties(parent, frameType, info)
 					setValueFromText("internal_mr_scaley", self:GetValue())
 				end
 
-			local horizontalTranslation = propertiesPanel:CreateRow("Translation", "Horizontal")
+			local horizontalTranslation = propertiesPanel:CreateRow("gui.mr.props.translation", "gui.mr.props.horizontal")
 				horizontalTranslation:Setup("Float", { min = -1, max = 1 })
 				horizontalTranslation:SetValue(GetConVar("internal_mr_offsetx"):GetFloat())
 				horizontalTranslation.DataChanged = function(self, data)
@@ -188,7 +188,7 @@ function Panels:SetProperties(parent, frameType, info)
 					setValueFromText("internal_mr_offsetx", self:GetValue())
 				end
 
-			local verticalTranslation = propertiesPanel:CreateRow("Translation", "Vertical")
+			local verticalTranslation = propertiesPanel:CreateRow("gui.mr.props.translation", "gui.mr.props.vertical")
 				verticalTranslation:Setup("Float", { min = -1, max = 1 })
 				verticalTranslation:SetValue(GetConVar("internal_mr_offsety"):GetFloat())
 				verticalTranslation.DataChanged = function(self, data)
@@ -199,7 +199,7 @@ function Panels:SetProperties(parent, frameType, info)
 					setValueFromText("internal_mr_offsety", self:GetValue())
 				end
 
-			local rotation = propertiesPanel:CreateRow("Others", "Rotation")
+			local rotation = propertiesPanel:CreateRow("gui.mr.props.others", "gui.mr.props.rotation")
 				rotation:Setup("Float", { min = -180, max = 180 })
 				rotation:SetValue(GetConVar("internal_mr_rotation"):GetFloat())
 				rotation.DataChanged = function(self, data)
@@ -210,7 +210,7 @@ function Panels:SetProperties(parent, frameType, info)
 					setValueFromText("internal_mr_rotation", self:GetValue())
 				end
 
-			local details = propertiesPanel:CreateRow("Others", "Detail")
+			local details = propertiesPanel:CreateRow("gui.mr.props.others", "gui.mr.props.detail")
 				details:Setup("Combo", { text = GetConVar("internal_mr_detail"):GetString() })
 				for k,v in SortedPairs(MR.Detail:GetList()) do
 					details:AddChoice(k, { k, v })

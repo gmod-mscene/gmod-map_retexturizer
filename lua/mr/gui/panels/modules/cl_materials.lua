@@ -6,7 +6,7 @@ local Panels = MR.CL.Panels
 
 -- Section: manage materials
 function Panels:SetMaterials(parent, frameType, info)
-	local frame = MR.CL.Panels:StartContainer("Materials", parent, frameType, info)
+	local frame = MR.CL.Panels:StartContainer("gui.mr.mp.name", parent, frameType, info)
 	MR.CL.ExposedPanels:Set(frame, "materials", "frame")
 
 	local width = frame:GetWide()
@@ -51,7 +51,7 @@ function Panels:SetMaterials(parent, frameType, info)
 	local materialsHint = vgui.Create("DLabel", panel)
 		materialsHint:SetPos(materialsHintInfo.x, materialsHintInfo.y)
 		materialsHint:SetSize(materialsHintInfo.width, materialsHintInfo.height)
-		materialsHint:SetText("	   Use the context menu for greater visibility.")
+		materialsHint:SetText("gui.mr.mp.tip")
 		materialsHint:SetTextColor(MR.CL.Panels:GetHintColor())
 
 	--------------------------
