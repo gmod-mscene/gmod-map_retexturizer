@@ -349,7 +349,7 @@ function Panels:SetLoad(parent, frameType, info)
 		}
 
 		for k,v in pairs(options) do
-			local name = DLib.I18n.Localize("gui.mr.Load.speed." .. k)
+			local name = DeadDuck.tr.Localize("gui.mr.Load.speed." .. k)
 			speedCombobox:AddChoice(name, v, nil, icons[k] or icons["NotDetected"])
 		end
 
